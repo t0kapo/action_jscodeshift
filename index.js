@@ -1,5 +1,13 @@
 const core = require('@actions/core');
 const exec = require('@actions/exec');
 
+try {
+    const codemod_file = core.getInput('codemod');
+    const transform_files = core.getInput('transform');
+    const codemod = String(codemod_file); 
+    const transforms = String(transform_files);
+    await exec.exec('npx jscodeshift -t ' + codemod + ' ' + transforms);
 
-await exec.exec('node index.js');
+} catch (error){
+    core.setFailed(error.message);
+}
