@@ -1,0 +1,13 @@
+name: 'Trusted Types codemod'
+description: 'This Action .'
+inputs: 
+        codemod: 
+                description: 'input HTML file path'
+                required: true
+        js-policy-file-path: 
+                description: 'input file path of "Trusted Type policy"'
+                required: true
+runs:
+        using: 'node12'
+        main: 'add_tag.js'
+

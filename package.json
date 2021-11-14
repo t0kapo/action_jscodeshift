@@ -1,0 +1,14 @@
+{
+  "name": "tt_codemod",
+  "version": "1.0.0",
+  "description": "This action makes your JavaScript code compliant with the Trusted Types policy.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "t0kapo",
+  "license": "ISC",
+  "dependencies": {
+    "jscodeshift": "^0.13.0"
+  }
+}
