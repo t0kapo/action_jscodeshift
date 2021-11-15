@@ -9,6 +9,8 @@
   "author": "t0kapo",
   "license": "ISC",
   "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/exec": "^1.1.0",
     "jscodeshift": "^0.13.0"
   }
 }
