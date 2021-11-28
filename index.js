@@ -1,10 +1,11 @@
 const core = require('@actions/core');
 const exec = require('@actions/exec');
+
+exec.exec('git clone https://github.com/t0kapo/tt_codemod');
+
 const fs = require("fs");
 
 try {
-    exec.exec('git clone https://github.com/t0kapo/tt_codemod');
-    
     const codemod_file = core.getInput('codemod');
     const transform_files = core.getInput('transform');
     const policy_name = core.getInput('policyname');
