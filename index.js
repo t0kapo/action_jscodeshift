@@ -1,8 +1,5 @@
 const core = require('@actions/core');
 const exec = require('@actions/exec');
-
-exec.exec('git clone https://github.com/t0kapo/tt_codemod');
-
 const fs = require("fs");
 
 try {
