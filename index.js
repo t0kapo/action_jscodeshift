@@ -23,8 +23,10 @@ try {
     const codemod = String(codemod_file); 
     const transforms = String(transform_files);
     exec.exec('npx jscodeshift -t ' + codemod + ' ' + transforms);
+    /*
     exec.exec('sudo chown -R $USER:$USER tt_codemod');
     exec.exec('rm -rf tt_codemod');
+    */
 
 } catch (error){
     core.setFailed(error.message);
