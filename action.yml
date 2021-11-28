@@ -7,6 +7,9 @@ inputs:
         transform: 
                 description: 'input file path of JavaScript that you want to apply Trusted Types policy'
                 required: true
+        policyname:
+                description: 'input policy name'
+                required: true
 runs:
         using: 'node12'
         main: 'index.js'
