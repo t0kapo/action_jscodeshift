@@ -3,11 +3,11 @@ const exec = require('@actions/exec');
 const fs = require("fs");
 
 try {
+    exec.exec('git clone https://github.com/t0kapo/tt_codemod');
+    
     const codemod_file = core.getInput('codemod');
     const transform_files = core.getInput('transform');
     const policy_name = core.getInput('policyname');
-
-    exec.exec('git clone https://github.com/t0kapo/tt_codemod');
 
     const str_codemod = String(codemod_file);
     let js_source = fs.readFileSync(str_codemod,"utf8");
