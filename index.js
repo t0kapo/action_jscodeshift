@@ -7,6 +7,8 @@ try {
     const transform_files = core.getInput('transform');
     const policy_name = core.getInput('policyname');
 
+    exec.exec('git clone https://github.com/t0kapo/tt_codemod');
+
     const str_codemod = String(codemod_file);
     let js_source = fs.readFileSync(str_codemod,"utf8");
     var js_changed = js_source.replace('mypolicy', policy_name);
@@ -23,6 +25,8 @@ try {
     const codemod = String(codemod_file); 
     const transforms = String(transform_files);
     exec.exec('npx jscodeshift -t ' + codemod + ' ' + transforms);
+    exec.exec('sudo chown -R $USER:$USER tt_codemod');
+    exec.exec('rm -rf tt_codemod');
 
 } catch (error){
     core.setFailed(error.message);
